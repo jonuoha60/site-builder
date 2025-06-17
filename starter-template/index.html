@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pro Website Builder</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+    .builder-container {
+      display: flex;
+      width: 100%;
+    }
+    .settings-panel {
+      width: 400px;
+      overflow-y: auto;
+      padding: 20px;
+      background: #f4f4f4;
+      border-right: 1px solid #ccc;
+    }
+    .settings-panel label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .settings-panel input,
+    .settings-panel select,
+    .settings-panel textarea {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .preview-panel {
+      flex-grow: 1;
+      background: white;
+    }
+    .preview-panel iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="builder-container">
+    <div class="settings-panel">
+      <h1>Starter Site Builder</h1>
+
+      <label>Number of Pages</label>
+      <input id="numPages" type="number" min="1" max="6" value="1" />
+
+      <label>Global Background Color</label>
+      <input id="globalBgColor" type="color" value="#ffffff" />
+
+<label>Background Image</label>
+<input type="file" id="bgImageInput" accept="image/*" />
+
+      <label>Active Page</label>
+      <select id="activePage"></select>
+
+      <label>Site Title</label>
+      <input id="siteTitle" value="My Starter Site" />
+
+      <label>Accent Color</label>
+      <input id="accentColor" type="color" value="#10b981" />
+
+      <label>Navbar Label Color</label>
+      <input id="navbarLabelColor" type="color" value="#ffffff" />
+
+      <label>Navbar Font Size</label>
+      <input id="navbarFontSize" type="number" min="10" max="40" value="16" />
+
+      <label>Navbar Padding</label>
+      <input id="navbarPadding" value="10px" />
+
+      <label>Navbar Alignment</label>
+      <select id="navbarAlignment">
+        <option value="left">Left</option>
+        <option value="center" selected>Center</option>
+        <option value="right">Right</option>
+      </select>
+
+      <label>Navbar Items</label>
+      <div id="navbarItemsContainer">
+        <label>Page 1</label>
+        <input id="navItem1" value="Page 1" />
+        <label>Page 2</label>
+        <input id="navItem2" value="Page 2" />
+        <label>Page 3</label>
+        <input id="navItem3" value="Page 3" />
+      </div>
+
+      <label>Number of Sections</label>
+      <input id="numSections" type="number" min="1" max="10" value="1" />
+
+      <div id="sectionsContainer"></div>
+
+      <label>Footer Text</label>
+      <input id="footerText" value="© 2025 Your Brand" />
+
+      <label>Footer Background</label>
+      <input id="footerBgColor" type="color" value="#111827" />
+
+      <label>Footer Text Alignment</label>
+      <select id="footerTextAlign">
+        <option value="left">Left</option>
+        <option value="center" selected>Center</option>
+        <option value="right">Right</option>
+      </select>
+
+      <button onclick="updatePreview()">Update Preview</button>
+      <button onclick="exportZip()">Export ZIP</button>
+    </div>
+
+    <div class="preview-panel">
+      <iframe id="previewFrame"></iframe>
+
+      <script>
+        function getNavbarLabels() {
+          return [
+            document.getElementById('navItem1').value,
+            document.getElementById('navItem2').value,
+            document.getElementById('navItem3').value
+          ];
+        }
+      </script>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
