@@ -1,1 +1,30 @@
-To use the Website-Template, first clone the repository to your local machine using Git, then navigate into the project folder and install all dependencies using npm install; once installed, you can start the development server with npm run dev to preview the site locally, after which you can begin customizing the template by editing titles, sections, images, and styles in the src directory, including modifying layout components and uploading your own images either locally or via base64; when you're ready to launch, you can build the project for production using npm run build, which generates an optimized dist folder, and then you can deploy the contents of the dist folder to any static hosting provider like Vercel, Netlify, or manually to your server, all while optionally running tests if you've enabled them, and ensuring that you’re following the MIT License terms if you distribute or modify the template.
+# 🌐 Website Template
+
+A customizable and responsive website template built with modern web technologies. Easily tweak layout, content, and styles to match your brand or project needs.
+
+---
+
+## 🚀 Getting Started
+
+Follow the steps below to set up, customize, and deploy the template.
+
+### 1. 📦 Clone the Repository
+
+```bash
+git clone https://github.com/your-username/website-template.git
+cd website-template
+
+### 2. 📥 Install Dependencies
+Ensure you have Node.js installed, then run:
+
+bash
+Copy
+Edit
+npm install
+3. 💻 Start Development Server
+Preview the site locally with:
+
+bash
+Copy
+Edit
+npm run dev
